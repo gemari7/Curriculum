@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% pictures
+\usepackage{graphicx}
+\pagestyle{empty} %Limpia la pagina
+% update default paragraph indent, and header space
+\setlength{\topskip}{0pt}      % between header and text (0 needed for vertical centring)
+\usepackage{parskip}           % remove paragraph indents
+%Para las macros
+\usepackage{xparse}
+% links
+\usepackage{hyperref}
+
+%-------------------------------------------------------------------------------
+%                         Margenes General
+%-------------------------------------------------------------------------------
+\usepackage{calc}
+%-----------MARGEN
+\newlength\cvMargin
+\setlength\cvMargin{1cm}
+
+\newlength\cvSideWidth
+\setlength\cvSideWidth{0.3\paperwidth-\cvMargin}
+
+\newlength\cvPictureWidth
+\setlength\cvPictureWidth{4cm}
+
+%Dimensiones de PaginaNormal
+\usepackage[margin=\cvMargin,noheadfoot,a4paper]{geometry}
+
+
+%-------------------------------------------------------------------------------
+%                         Iconos
+%-------------------------------------------------------------------------------
+% load external fonts
+%\usepackage{fontspec}   
+% icon font
+\usepackage{fontawesome} 
+% load external fonts
+%\setmainfont[Numbers={OldStyle,Monospaced}]{Fira Sans}
+%\setsansfont{Fira Sans}
+%\setmonofont{Fira Mono}
+%-------------------------------------------------------------------------------
+%                         Barra Lateral
+%-------------------------------------------------------------------------------
+\usepackage{tikz}
+%La calc biblioteca permite utilizar combinaciones complejas de nodos (por ejemplo, fracciones de coordenadas de nodo)
+% la positioning biblioteca permite un posicionamiento relativo conveniente de los nodos
+\usetikzlibrary{calc,positioning,backgrounds,matrix}
+
+\tikzset{
+  contactIcon/.style={%
+    minimum height=\baselineskip,
+  },
+  contactText/.style={%
+    minimum height=\baselineskip,
+    text depth=0pt,
+  }
+}
+
+%-------------------------------------------------------------------------------
+%                         Colores
+%-------------------------------------------------------------------------------
+
+\definecolor{cvColorLateral}{HTML}{B8E4B3}
+\definecolor{cvAccent}{HTML}{474A65}
+\definecolor{cvBarra}{HTML}{357F2D}
+
+
+
+   
+
+  
+   
+
+
+%-------------------------------------------------------------------------------
+%                         Macro Barra
+%-------------------------------------------------------------------------------
+% based on https://tex.stackexchange.com/questions/65731
+\makeatletter
+\def\cv@hrulefill{{\color{cvBarra}\leavevmode\leaders\hrule height 1pt\hfill\kern\z@}}
+
+% line before and after text (some tweaking is required here)
+% based on https://tex.stackexchange.com/questions/15119
+\NewDocumentCommand{\ruleline}{m}{\par\noindent\raisebox{\baselineskip/4}
+{\makebox[\linewidth]{\cv@hrulefill\hspace{1ex}\raisebox{-\baselineskip/4}
+{#1}\hspace{1ex}\cv@hrulefill}}}
+\makeatother
+
+\begin{document}
+
+    
+
+	\input{PaginaLateral.tex} 
+	\input{PaginaNormal.tex}
+
+
+
+
+\end{document}

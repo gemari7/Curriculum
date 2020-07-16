@@ -1,0 +1,77 @@
+
+%Vertical
+\vspace*{\fill}
+
+    %Rectangulo----------------------------------------------------------
+    \begin{tikzpicture}[remember picture,overlay]
+        \fill[cvColorLateral] (current page.north west) rectangle ++(\cvSideWidth+2\cvMargin,-\paperheight);
+    \end{tikzpicture}
+    %---------------------------------------------------------------------
+    
+    \begin{minipage}{\cvSideWidth}
+        \begin{center}
+        %-------------------------------------------------------------------------------
+        %                         Seccion de Identificacion
+        %-------------------------------------------------------------------------------
+        %Foto
+        \begin{tikzpicture}
+          \node[
+            circle,
+            minimum size=\cvPictureWidth,
+            path picture={
+              \node at (path picture bounding box.center){
+              \includegraphics[width=\cvPictureWidth]{img/profile2.jpg}
+              };
+            }]
+            {};
+        \end{tikzpicture}
+        {\LARGE
+        Gema María\\
+        \vspace{0.1cm}
+        García Ortega}
+        \vspace{0.5cm}
+        
+        {\color{cvAccent} Ingeniero Informático}
+        
+        \vspace{0.5cm}
+        \ruleline{Sobre mi}
+        Soy una persona asertiva, trabajadora, con gran juicio crítico-analítico. Me gusta afrontar nuevos retos y trabajar en equipo.
+        
+        \vspace{4pt}
+        %-------------------------------------------------------------------------------
+        %                         Sección de contacto
+        %-------------------------------------------------------------------------------
+        \ruleline{Datos personales}
+          \vspace{4pt}
+  
+          \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+          \matrix [
+            column 1/.style={anchor=center,contactIcon},
+            column 2/.style={anchor=west,align=left,contactText},
+            column sep=5pt,
+            row sep=5pt] (contact) {
+            
+                \node{\faMapMarker}; 
+                  & \node{Calle Ronda de la Manca, 51};\\
+                \node{\faEnvelope}; 
+                  & \node{\href{mailto:gemari777@gmail.com}{gemari777@gmail.com}};\\
+                \node{\faPhone}; 
+                  & \node{+34 957 48 51 87 \\680 95 87 99};\\
+                \node{\faGlobe}; 
+                  & \node{\href{https://johndoe.com}{johndoe.com}};\\
+                \node{\faGithub}; 
+                  & \node{\href{https://github.com/johndoe}{johndoe}};\\
+                \node{\faLinkedinSquare}; 
+                  & \node{\href{https://www.linkedin.com/in/johndoe/}{johndoe}};\\
+                \node{\faTwitter}; 
+                  & \node{\href{https://twitter.com/JohnDoe}{@JohnDoe}};\\
+                \node{\faKey}; 
+                  & \node{\href{https://keybase.io/johndoe}{\texttt{EA31 B617 B3A1 EFF0}}};\\
+        };
+\end{tikzpicture}
+          
+          \vspace{4pt}
+        
+        \end{center}
+    \end{minipage}
+\vspace*{\fill}
