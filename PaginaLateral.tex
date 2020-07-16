@@ -9,7 +9,9 @@
     %---------------------------------------------------------------------
     
     \begin{minipage}{\cvSideWidth}
-        \begin{center}
+	\begin{center}
+		
+		
         %-------------------------------------------------------------------------------
         %                         Seccion de Identificacion
         %-------------------------------------------------------------------------------
@@ -20,7 +22,7 @@
             minimum size=\cvPictureWidth,
             path picture={
               \node at (path picture bounding box.center){
-              \includegraphics[width=\cvPictureWidth]{img/profile2.jpg}
+              \includegraphics[width=\cvPictureWidth]{img/profile2.PNG}
               };
             }]
             {};
@@ -34,44 +36,98 @@
         {\color{cvAccent} Ingeniero Informático}
         
         \vspace{0.5cm}
-        \ruleline{Sobre mi}
-        Soy una persona asertiva, trabajadora, con gran juicio crítico-analítico. Me gusta afrontar nuevos retos y trabajar en equipo.
-        
-        \vspace{4pt}
         %-------------------------------------------------------------------------------
-        %                         Sección de contacto
+        %                         Sección de Datos personales
         %-------------------------------------------------------------------------------
         \ruleline{Datos personales}
-          \vspace{4pt}
-  
-          \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
-          \matrix [
-            column 1/.style={anchor=center,contactIcon},
-            column 2/.style={anchor=west,align=left,contactText},
-            column sep=5pt,
-            row sep=5pt] (contact) {
-            
-                \node{\faMapMarker}; 
-                  & \node{Calle Ronda de la Manca, 51};\\
-                \node{\faEnvelope}; 
-                  & \node{\href{mailto:gemari777@gmail.com}{gemari777@gmail.com}};\\
-                \node{\faPhone}; 
-                  & \node{+34 957 48 51 87 \\680 95 87 99};\\
-                \node{\faGlobe}; 
-                  & \node{\href{https://johndoe.com}{johndoe.com}};\\
-                \node{\faGithub}; 
-                  & \node{\href{https://github.com/johndoe}{johndoe}};\\
-                \node{\faLinkedinSquare}; 
-                  & \node{\href{https://www.linkedin.com/in/johndoe/}{johndoe}};\\
-                \node{\faTwitter}; 
-                  & \node{\href{https://twitter.com/JohnDoe}{@JohnDoe}};\\
-                \node{\faKey}; 
-                  & \node{\href{https://keybase.io/johndoe}{\texttt{EA31 B617 B3A1 EFF0}}};\\
-        };
-\end{tikzpicture}
-          
-          \vspace{4pt}
         
-        \end{center}
+        \vspace{0.5cm}
+        
+        \begin{tikzpicture}[every node/.style={inner sep=0pt, outer sep=0pt}]
+        \matrix [
+        column 1/.style={anchor=center,contactIcon},
+        column 2/.style={anchor=west,align=left,contactText},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+        	\node{\faUser};
+        	& \node{Marzo 19, 1997};\\
+        	\node{\faMapMarker}; 
+        	& \node{Calle Ronda de la Manca, 51};\\
+        	\node{\faEnvelope}; 
+        	& \node{\href{mailto:gemari777@gmail.com}{gemari777@gmail.com}};\\
+        	\node{\faPhone}; 
+        	& \node{+34 957 48 51 87 \\680 95 87 99};\\       
+        	\node{\faGithub}; 
+        	& \node{\href{https://github.com/gemari7}{gemari7}};\\
+        	\node{\faLinkedinSquare}; 
+        	& \node{\href{https://www.linkedin.com/in/gema-maria-garc%C3%ADa-ortega-246116160/}{GemaMaria}};\\     
+        	\node{\faFacebook}; 
+        	& \node{\href{https://www.facebook.com/profile.php?id=100014795584977}{GemaMaria}};\\  
+        };
+        \end{tikzpicture}
+        
+        \vspace{0.5cm}
+        %-------------------------------------------------------------------------------
+        %                         Sección Sobre mi
+        %-------------------------------------------------------------------------------
+        \ruleline{Sobre mi}
+        
+        Soy una persona asertiva, trabajadora, con gran juicio crítico-analítico. Me gusta afrontar nuevos retos y trabajar en equipo.
+        
+        \vspace{0.5cm}
+        
+		%-------------------------------------------------------------------------------
+		%                         Sección de Idioma
+		%-------------------------------------------------------------------------------
+		\ruleline{Idiomas}
+		
+		\vspace{0.5cm}
+		
+		\begin{tikzpicture}[every node/.style={text depth=0pt,inner sep=0pt,outer sep=0pt}]
+		\matrix [
+		column 1/.style={anchor=east},
+		column 2/.style={anchor=west},
+		column sep=5pt,
+		row sep=5pt] (contact) {
+			\node[languageText]{Español}; & \node[progressArea] (language 1) {}; \\
+			\node[languageText]{English};  & \node[progressArea] (language 2) {}; \\
+			\node[languageText]{French}; & \node[progressArea] (language 3) {}; \\
+		};
+		\draw (language 1.west) node[progressBar,minimum width=5/5*\cvLanguageBarWidth] {};
+		\draw (language 2.west) node[progressBar,minimum width=3/5*\cvLanguageBarWidth] {};
+		\draw (language 3.west) node[progressBar,minimum width=1/5*\cvLanguageBarWidth] {};
+		\end{tikzpicture}
+        \vspace{0.5cm}
+        
+        %-------------------------------------------------------------------------------
+        %                         Sección de Habilidades
+        %-------------------------------------------------------------------------------
+        \ruleline{Habilidades}
+        
+        \vspace{0.5cm}
+        
+        \begin{tikzpicture}[every node/.style={text depth=0pt,inner sep=0pt,outer sep=0pt}]
+        \matrix [
+        column 1/.style={anchor=east},
+        column 2/.style={anchor=west},
+        column sep=5pt,
+        row sep=5pt] (contact) {
+        	\node[languageText]{LaTeX}; & \node[progressArea] (habilidad 1) {}; \\
+        	\node[languageText]{C++};  & \node[progressArea] (habilidad 2) {}; \\
+        	\node[languageText]{Java}; & \node[progressArea] (habilidad 3) {}; \\
+        	\node[languageText]{Matlab}; & \node[progressArea] (habilidad 4) {}; \\
+        	\node[languageText]{Python}; & \node[progressArea] (habilidad 5) {}; \\
+        	\node[languageText]{Html}; & \node[progressArea] (habilidad 6) {}; \\
+        	\node[languageText]{AutoCAD}; & \node[progressArea] (habilidad 7) {}; \\
+        };
+        \draw (habilidad 1.west) node[progressBar,minimum width=5/5*\cvLanguageBarWidth] {};
+        \draw (habilidad 2.west) node[progressBar,minimum width=5/5*\cvLanguageBarWidth] {};
+        \draw (habilidad 3.west) node[progressBar,minimum width=3/5*\cvLanguageBarWidth] {};
+        \draw (habilidad 4.west) node[progressBar,minimum width=4/5*\cvLanguageBarWidth] {};
+        \draw (habilidad 5.west) node[progressBar,minimum width=2/5*\cvLanguageBarWidth] {};
+        \draw (habilidad 6.west) node[progressBar,minimum width=3/5*\cvLanguageBarWidth] {};
+        \draw (habilidad 7.west) node[progressBar,minimum width=3/5*\cvLanguageBarWidth] {};
+        \end{tikzpicture}
+	\end{center}
     \end{minipage}
 \vspace*{\fill}

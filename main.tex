@@ -10,7 +10,7 @@
 %Para las macros
 \usepackage{xparse}
 % links
-\usepackage{hyperref}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=cyan, filecolor=magenta,urlcolor=cyan,menucolor=cyan ]{hyperref}%Hipervínculos, da color, etc.
 
 %-------------------------------------------------------------------------------
 %                         Margenes General
@@ -26,6 +26,12 @@
 \newlength\cvPictureWidth
 \setlength\cvPictureWidth{4cm}
 
+\newlength\cvLanguageBarWidth
+\setlength\cvLanguageBarWidth{5em}
+
+\newlength\cvLanguageBarHeight
+\setlength\cvLanguageBarHeight{0.75em}
+
 %Dimensiones de PaginaNormal
 \usepackage[margin=\cvMargin,noheadfoot,a4paper]{geometry}
 
@@ -33,14 +39,10 @@
 %-------------------------------------------------------------------------------
 %                         Iconos
 %-------------------------------------------------------------------------------
-% load external fonts
-%\usepackage{fontspec}   
+  
 % icon font
 \usepackage{fontawesome} 
-% load external fonts
-%\setmainfont[Numbers={OldStyle,Monospaced}]{Fira Sans}
-%\setsansfont{Fira Sans}
-%\setmonofont{Fira Mono}
+
 %-------------------------------------------------------------------------------
 %                         Barra Lateral
 %-------------------------------------------------------------------------------
@@ -50,13 +52,27 @@
 \usetikzlibrary{calc,positioning,backgrounds,matrix}
 
 \tikzset{
-  contactIcon/.style={%
-    minimum height=\baselineskip,
-  },
-  contactText/.style={%
-    minimum height=\baselineskip,
-    text depth=0pt,
-  }
+	contactIcon/.style={%
+	    minimum height=\baselineskip,
+	},
+	  contactText/.style={%
+	    minimum height=\baselineskip,
+	    text depth=0pt,
+	},
+	languageText/.style={},
+	progressArea/.style={%
+		draw,
+		rectangle,
+		minimum width=\cvLanguageBarWidth,
+		minimum height=\cvLanguageBarHeight,
+		cvProgressBar},
+	progressBar/.style={%
+		minimum height=\cvLanguageBarHeight,
+		rectangle,
+		draw,
+		fill,
+		cvProgressBar,
+		anchor=west},
 }
 
 %-------------------------------------------------------------------------------
@@ -66,6 +82,7 @@
 \definecolor{cvColorLateral}{HTML}{B8E4B3}
 \definecolor{cvAccent}{HTML}{474A65}
 \definecolor{cvBarra}{HTML}{357F2D}
+\definecolor{cvProgressBar}{HTML}{357F2D}
 
 
 
@@ -88,6 +105,7 @@
 {\makebox[\linewidth]{\cv@hrulefill\hspace{1ex}\raisebox{-\baselineskip/4}
 {#1}\hspace{1ex}\cv@hrulefill}}}
 \makeatother
+
 
 \begin{document}
 
