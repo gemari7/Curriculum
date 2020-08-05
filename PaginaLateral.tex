@@ -22,7 +22,7 @@
             minimum size=\cvPictureWidth,
             path picture={
               \node at (path picture bounding box.center){
-              \includegraphics[width=\cvPictureWidth]{img/profile2.PNG}
+              \includegraphics[width=\cvPictureWidth]{img/profile.jpg}
               };
             }]
             {};
@@ -90,12 +90,10 @@
 		column sep=5pt,
 		row sep=5pt] (contact) {
 			\node[languageText]{Español}; & \node[progressArea] (language 1) {}; \\
-			\node[languageText]{English};  & \node[progressArea] (language 2) {}; \\
-			\node[languageText]{French}; & \node[progressArea] (language 3) {}; \\
+			\node[languageText]{English};  & \node[progressArea] (language 2) {}; \\		
 		};
 		\draw (language 1.west) node[progressBar,minimum width=5/5*\cvLanguageBarWidth] {};
 		\draw (language 2.west) node[progressBar,minimum width=3/5*\cvLanguageBarWidth] {};
-		\draw (language 3.west) node[progressBar,minimum width=1/5*\cvLanguageBarWidth] {};
 		\end{tikzpicture}
         \vspace{0.5cm}
         

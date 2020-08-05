@@ -1,1 +1,276 @@
+\begin{tikzpicture}[
+	every node/.style={
+		inner sep=0pt,
+		outer sep=0pt
+	},
+	remember picture,
+	overlay,
+	shift={($(current page.north west)%
+		+(\cvSideWidth+3\cvMargin+\cvTimeDotSep,-\cvMargin)$)}]
+	
+	
+	
+	
+%-------------------------------------------------------------------------------
+%                         Seccion de Educación
+%-------------------------------------------------------------------------------
+	
+	\node[ %---------------TITULO
+		sectionTitle] 
+		at (0,0) (title 1) %ID
+		{\cvSection{Estudios}};%NOMBRE
+	\node[ %---------------ICONO
+		left=\cvTimeDotSep of title 1,headerIcon] 
+		{\faGraduationCap};
+	%----------------------LINEA
+	\begin{scope}[on background layer]
+		\draw[line width=2pt,cvBarra] 
+		let \p1=(title 1.south west), 
+			\p2=(current page.east) in 
+		(\x1,\y1-0.1cm) to (\x2,\y1-0.1cm);
+	\end{scope}
+	
+	%-----------------------------------------
+	%                  Item 1
+	%-----------------------------------------
+	\node[
+		below=\cvSectionSep of title 1.south west,
+		itemText] 
+		(item 1 header) 
+		{\phantom{Item}};
+	\node[
+		below=\cvSectionSep of title 1.south west,
+		itemText] 
+		(item 1) 
+		{\cvItem{2015 - 2020}%
+			{Grado en Ingeniería Informática}%
+			{Universidad de Córdoba. }%
+			{Matrícula de honor Trabajo Fin de Grado, titulado  \href{https://github.com/gemari7/AplicacionMovilParaLaGestionDeLaProteccionContraIncendios}{Aplicación móvil para la gestión de la protección contra incendios}.\\
+			Matrícula de honor en Auditoria Informática.\\			
+			Matrícula de honor en Matemáticas aplicadas a la Computación.\\
+			Matrícula de honor en Arquitectura de Computadores.}%
+		};
+	\node[
+		left=\cvTimeDotSep of item 1 header,
+		timedot] 
+		(start) 
+		{};
+	%-----------------------------------------
+	%                  Item 2
+	%-----------------------------------------
+	\node[
+		below=\cvSectionSep of item 1.south west,
+		itemText] 
+		(item 2 header) 
+		{\phantom{Item}};
+	\node[
+		below=\cvSectionSep of item 1.south west,
+		itemText] 
+		(item 2) 
+		{\cvItem{2013 - 2015}%
+			{Bachillerato Tecnologico}%
+			{IES Maimónides. }%
+			{Nota media notable.}%
+		};
+	\node[
+		left=\cvTimeDotSep of item 2 header,
+		timedot] 
+		(end) 
+		{};
+	\node[
+		left=\cvTimeDotSep of item 2.south west,
+		invisibletimedot] 
+		(end) 
+		{};
+		\draw (start) to (end.center);
+
+	
+%-------------------------------------------------------------------------------
+%                         Seccion de Formación complementaria
+%-------------------------------------------------------------------------------
+
+	\node[ %---------------TITULO
+		below=0.6cm of item 2.south west,
+		sectionTitle] 
+		(title 2) 
+		{\cvSection{Formación Complementaria}};
+	\node[ %---------------ICONO
+		left=\cvTimeDotSep of title 2,headerIcon] 
+		{\faWpforms};
+	\node[
+		below=0.6cm of item 2.south west,
+		sectionTitle] 
+		(title 2 dummy) 
+		{\phantom{\cvSection{Education}}};
+	%--------------------LINEA
+	\begin{scope}[on background layer]
+		\draw[line width=2pt,cvBarra] 
+		let \p1=(title 2 dummy.south west), 
+			\p2=(current page.east) in 
+		(\x1,\y1-0.1cm) to (\x2,\y1-0.1cm);
+	\end{scope}
+	
+	%-----------------------------------------
+	%                  Item 1
+	%-----------------------------------------
+	\node[
+		below=\cvSectionSep of title 2.south west,
+		itemText] 
+		(item 1 header) 
+		{\phantom{Item}};
+	\node[
+		below=\cvSectionSep of title 2.south west,
+		itemText] 
+		(item 1) 
+		{\cvItem{2019}%
+			{Certificado de manipulador de alimentos de mayor riesgo}%
+			{ALARCOR D.L. }%
+			{Certificado de acreditación de la formación correspondiente a manipulador de alimentos de mayor riesgo.}%
+		};
+	\node[
+		left=\cvTimeDotSep of item 1 header,
+		timedot] 
+		(start) 
+		{};
+	%-----------------------------------------
+	%                  Item 2
+	%-----------------------------------------
+	\node[
+		below=\cvSectionSep of item 1.south west,
+		itemText] 
+		(item 2 header) 
+		{\phantom{Item}};
+	\node[
+		below=\cvSectionSep of item 1.south west,
+		itemText] 
+		(item 2) 
+		{\cvItem{2018}%
+			{Certificado de CCNA 2}%
+			{Universidad de Córdoba. }%
+			{CCNA Routing and Switching: Principios básicos de routing y switching.}%
+		};
+	\node[
+		left=\cvTimeDotSep of item 2 header,
+		timedot] 
+		{};
+	%-----------------------------------------
+	%                  Item 3
+	%-----------------------------------------
+	\node[
+		below=\cvSectionSep of item 2.south west,
+		itemText] 
+		(item 3 header) 
+		{\phantom{Item}};
+	\node[
+		below=\cvSectionSep of item 2.south west,
+		itemText] 
+		(item 3) 
+		{\cvItem{2018}%
+			{Certificado de CCNA 1}%
+			{Universidad de Córdoba. }%
+			{CCNA Routing and Switching: Introducción a redes.}%
+		};
+	\node[
+		left=\cvTimeDotSep of item 3 header,
+		timedot] 
+		{};
+	%-----------------------------------------
+	%                  Item 4
+	%-----------------------------------------
+	\node[
+		below=\cvSectionSep of item 3.south west,
+		itemText] 
+		(item 4 header) 
+		{\phantom{Item}};
+	\node[
+		below=\cvSectionSep of item 3.south west,
+		itemText] 
+		(item 4) 
+		{\cvItem{2018}%
+			{Competencia en Kaggle}%
+			{Universidad de Córdoba. }%
+			{Certificado del grupo de Investigación de Aprendizaje y Redes Neuronales Artificiales (AYRNA)\\ \href{https://www.kaggle.com/c/competition-iaa-1819}{https://www.kaggle.com/c/competition-iaa-1819}.}%
+		};
+	\node[
+		left=\cvTimeDotSep of item 4 header,
+		timedot] 
+		{};
+	\node[
+		left=\cvTimeDotSep of item 4.south west,
+		invisibletimedot] 
+		(end) 
+		{};
+		\draw (start) to (end.center);
+	
+
+	
+
+
+%-------------------------------------------------------------------------------
+%                         Seccion de Experiencia Profesional
+%-------------------------------------------------------------------------------
+	
+	\node[ %---------------TITULO
+		below=0.6cm of item 4.south west,
+		sectionTitle] 
+		(title 3) 
+		{\cvSection{Experiencia Profesional}};
+	\node[ %---------------ICONO
+		left=\cvTimeDotSep of title 3,headerIcon] 
+		{\faBriefcase};
+	\node[
+		below=0.6cm of item 4.south west,
+		sectionTitle] 
+		(title 3 dummy) 
+		{\phantom{\cvSection{Formación Complementaria}}};
+		 %---------------LINEA
+	\begin{scope}[on background layer]
+		\draw[line width=2pt,cvBarra] 
+		let \p1=(title 3 dummy.south west), 
+			\p2=(current page.east) in 
+		(\x1,\y1-0.1cm) to (\x2,\y1-0.1cm);
+	\end{scope}
+	
+	%-----------------------------------------
+	%                  Item 1
+	%-----------------------------------------
+	\node[
+		below=\cvSectionSep of title 3.south west,
+		itemText] 
+		(item 1 header) 
+		{\phantom{Item}};
+	\node[
+		below=\cvSectionSep of title 3.south west,
+		itemText] 
+		(item 1) 
+		{\cvItem{2015 - 2020}%
+			{Personal de barra}%
+			{Estadio del Arcángel. }%
+			{Servir en la barra y atender al público.}%
+		};
+	\node[
+		left=\cvTimeDotSep of item 1 header,
+		timedot] 
+		(start)
+		{};
+	\node[
+		left=\cvTimeDotSep of item 1.south west,
+		invisibletimedot] 
+		(end) 
+		{};
+	\draw (start) to (end.center);
+	
+
+	
+	
+	
+	
+	
+	
+\end{tikzpicture}
+
+
+
+
+
 

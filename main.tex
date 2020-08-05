@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 % pictures
@@ -10,10 +10,16 @@
 %Para las macros
 \usepackage{xparse}
 % links
-\usepackage[colorlinks=true,linkcolor=black,citecolor=cyan, filecolor=magenta,urlcolor=cyan,menucolor=cyan ]{hyperref}%Hipervínculos, da color, etc.
+\usepackage[colorlinks=true,linkcolor=black,citecolor=cyan, filecolor=magenta,urlcolor=blue,menucolor=cyan ]{hyperref}%Hipervínculos, da color, etc.
+%-------------------------------------------------------------------------------
+%                         Iconos
+%-------------------------------------------------------------------------------
+
+% icon font
+\usepackage{fontawesome} 
 
 %-------------------------------------------------------------------------------
-%                         Margenes General
+%                         Margenes y Medidas
 %-------------------------------------------------------------------------------
 \usepackage{calc}
 %-----------MARGEN
@@ -32,19 +38,26 @@
 \newlength\cvLanguageBarHeight
 \setlength\cvLanguageBarHeight{0.75em}
 
+\newlength\cvTimeDotSep
+\setlength\cvTimeDotSep{0.4cm}
+
+\newlength\cvHeaderIconWidth
+\setlength{\cvHeaderIconWidth}{\maxof{\widthof{\faBriefcase}}{\widthof{\faGraduationCap}}}
+
+\newlength\cvMainWidth
+\setlength\cvMainWidth{\paperwidth-4\cvMargin-\cvSideWidth}
+
+\newlength{\cvSectionSep}
+\setlength{\cvSectionSep}{0.4cm}
+
 %Dimensiones de PaginaNormal
 \usepackage[margin=\cvMargin,noheadfoot,a4paper]{geometry}
 
 
-%-------------------------------------------------------------------------------
-%                         Iconos
-%-------------------------------------------------------------------------------
-  
-% icon font
-\usepackage{fontawesome} 
+
 
 %-------------------------------------------------------------------------------
-%                         Barra Lateral
+%                        Estilos
 %-------------------------------------------------------------------------------
 \usepackage{tikz}
 %La calc biblioteca permite utilizar combinaciones complejas de nodos (por ejemplo, fracciones de coordenadas de nodo)
@@ -73,16 +86,40 @@
 		fill,
 		cvProgressBar,
 		anchor=west},
+	headerIcon/.style={
+		minimum width=\cvHeaderIconWidth,
+		anchor=center,
+	},
+	sectionTitle/.style={
+		anchor=north west,
+		align=left},
+	itemText/.style = {
+		text width=\cvMainWidth-\cvTimeDotSep,
+		black,
+		anchor=north west,
+	},
+	invisibletimedot/.style = {
+		circle,
+		minimum width=3pt,
+		anchor=center
+	},
+	timedot/.style = {
+		invisibletimedot,
+		draw,
+		fill,
+		black,
+	},
 }
 
 %-------------------------------------------------------------------------------
 %                         Colores
 %-------------------------------------------------------------------------------
 
-\definecolor{cvColorLateral}{HTML}{B8E4B3}
+\definecolor{cvColorLateral}{HTML}{ABEBC6}
 \definecolor{cvAccent}{HTML}{474A65}
 \definecolor{cvBarra}{HTML}{357F2D}
 \definecolor{cvProgressBar}{HTML}{357F2D}
+
 
 
 
@@ -93,7 +130,7 @@
 
 
 %-------------------------------------------------------------------------------
-%                         Macro Barra
+%                         Macro Barra de los titulos (Lateral)
 %-------------------------------------------------------------------------------
 % based on https://tex.stackexchange.com/questions/65731
 \makeatletter
@@ -105,8 +142,23 @@
 {\makebox[\linewidth]{\cv@hrulefill\hspace{1ex}\raisebox{-\baselineskip/4}
 {#1}\hspace{1ex}\cv@hrulefill}}}
 \makeatother
+%-------------------------------------------------------------------------------
+%                         Macro Section
+%-------------------------------------------------------------------------------
+\newcommand{\cvSection}[1]{\Large\textbf{#1}}
+%-------------------------------------------------------------------------------
+%                         Macro Item
+%-------------------------------------------------------------------------------
 
+\newcommand{\cvItem}[4]{
+	\parbox[t]{0.2\textwidth}{ #1} 
+	\parbox[t]{0.81\textwidth}{\textbf{#2}\\ \textit{#3}\\#4}
 
+}
+%\parbox[position]{width}{text}
+%Titulo
+%Lugar    Fecha
+%Contenido
 \begin{document}
 
     
